@@ -5,7 +5,7 @@ from pdfminer.layout import LTTextContainer, LTChar
 from pikepdf import Pdf, Name, Dictionary
 
 # Set the desired directory path
-directory_path = "C:/Users/athorat/OneDrive - Nice Systems Ltd/00_Amit Thorat Data/Personal/GBH Loan Transfer"
+directory_path = r"C:\Users\HomeSmiles\JPythonF\ISBCapstoneJ\Capstone"
 
 # Change the current working directory
 os.chdir(directory_path)
@@ -13,7 +13,7 @@ os.chdir(directory_path)
 analyzer = AnalyzerEngine()
 
 # Open the PDF file
-pdf = Pdf.open("ICICI bank - Jul 2021.pdf")
+pdf = Pdf.open("QUPUN232418983_1.pdf")
 
 analyze_bounding_boxes = []
 
@@ -27,7 +27,7 @@ def combine_rect(rectA, rectB):
     return (startX, startY, endX, endY)
 
 # Iterate over all pages of the PDF
-for page_layout in extract_pages("ICICI bank - Jul 2021.pdf"):
+for page_layout in extract_pages("QUPUN232418983_1.pdf"):
     analyze_char_sets = []
 
     for text_container in page_layout:
@@ -86,4 +86,4 @@ for page in pdf.pages:
     page.Annots = pdf.make_indirect(annotations)
 
 # Save the modified PDF
-pdf.save("ICICIbank-Jul2021.pdf")
+pdf.save("R_QUPUN232418983_1.pdf")
